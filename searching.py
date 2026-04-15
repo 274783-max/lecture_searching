@@ -77,11 +77,21 @@ def binary_search(searched_data, target):
 
 def main():
     sequential_data = read_data("sequential.json", "unordered_sequence()")
+    target_number = 2
     print(sequential_data)
-    #linear_data = linear_search(searched_data, target)
-    #print(linear_data)
+    linear_data = linear_search(sequential_data, target_number)
+    print(linear_data)
+    binary_data = binary_search(sequential_data, target_number)
+    print(binary_data)
 
 
+
+#duration = 0
+#repetitions = 100
+#for measurements in:
+#    sart_time = time.perf_counter()
+#    end_time = time.perf_counter()
+#    duration += end_time - start_time
 
 if __name__ == "__main__":
     main()
