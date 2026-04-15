@@ -1,7 +1,9 @@
 from pathlib import Path
 import json
-
-from generators import unordered_sequence
+import random
+import time
+import matplotlib.pyplot as plt
+from generators import unordered_sequence, ordered_sequence
 
 
 
@@ -26,7 +28,7 @@ from generators import unordered_sequence
 
 import json
 def read_data(filename, field):
-    with open("sequential.json", "r") as f:
+    with open(filename, "r") as f:
         data = json.load(f)
         if field in data.keys():
             return data[field]
@@ -97,6 +99,35 @@ def main():
     binary_data = binary_search(sequential_data, target_number)
     print(binary_data)
 
+
+
+
+sizes = [100, 500, 1000, 5000, 10000]
+times = [0.00001, 0.00003, 0.00006, 0.00031, 0.00067]
+
+plt.plot(sizes, times)
+
+plt.xlabel("Velikost vstupu")
+plt.ylabel("Čas [s]")
+plt.title("Ukázkový graf měření")
+plt.show()
+
+
+def test_complexity(list_of_n):
+    for n in list_of_n:
+        unordered_data = unordered_sequence(n)
+        ordered_data = ordered_sequence(n)
+        duration_linear = 0
+        repetition = 100
+        for measurements in range(repetition):
+            sart_time_linear = time.perf_counter()
+            found_number = linear_search(unordered_data, target_numbmer)
+            end_time_bianry = time.perf_counter()
+            duration += end_time - start_time
+            times_linear.append(duration linear / repetitions)
+            times_binary.append(duration_binary / repetitions)
+        print(time_linear)
+        print(times_binary)
 
 
 #duration = 0
