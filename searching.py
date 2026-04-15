@@ -36,30 +36,42 @@ def read_data(filename, field):
 
 def linear_search(searched_data, target):
     positions = []
+
+    for index, value in enumerate(searched_data):
+        if value == target:
+            positions.append(index)
+    return {"positions": positions,
+            "count": len(positions)
+    }
     count = 0
     idx = 0
 
-    while idx < len(searched_data):
-        for i in searched_data:
-            if i == target:
-                count += 1
-                idx += 1
-    positions.append(count, idx)
-    return {searched_data["positions"] = positions
-    searched_data["count"] = count
-    }
+    #while idx < len(searched_data):
+    #    for i in searched_data:
+    #        if i == target:
+    #            count += 1
+    #            idx += 1
+    #positions.append(count, idx)
+    #return {searched_data["positions"] = positions
+    #searched_data["count"] = count
+    #}
 
 
 
+#def binary_search(searched_data, target):
+    #sorted(searched_data)
+    #s = searched_data.sort()
+    #for i in searched_data:
 
-
-#def binary_search():
 
 def main():
     sequential_data = read_data("sequential.json", "unordered_sequence()")
     print(sequential_data)
-   # linear_data = linear_search(searched_data, target)
-   # print(linear_data)
+    #linear_data = linear_search(searched_data, target)
+    #print(linear_data)
+
+
 
 if __name__ == "__main__":
     main()
+
