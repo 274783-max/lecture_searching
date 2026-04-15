@@ -34,6 +34,23 @@ def read_data(filename, field):
             return None
 
 
+def linear_search(searched_data, target):
+    positions = []
+    count = 0
+    idx = 0
+
+    while idx < len(searched_data):
+        for i in searched_data:
+            if i == target:
+                count += 1
+                idx += 1
+    positions.append(count, idx)
+    return {searched_data["positions"] = positions
+    searched_data["count"] = count
+    }
+
+
+
 
 
 #def binary_search():
@@ -41,7 +58,8 @@ def read_data(filename, field):
 def main():
     sequential_data = read_data("sequential.json", "unordered_sequence()")
     print(sequential_data)
-
+   # linear_data = linear_search(searched_data, target)
+   # print(linear_data)
 
 if __name__ == "__main__":
     main()
