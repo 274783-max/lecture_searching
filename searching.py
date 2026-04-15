@@ -73,6 +73,19 @@ def binary_search(searched_data, target):
             right = middle - 1
     return None
 
+pattern = "ATA"
+def pattern_search(sequence, pattern):
+    position = set()
+    pattern_len = len(pattern)
+    idx = 0
+    for i in sequence:
+        if i == pattern:
+            idx += 1
+    return
+
+
+
+
 
 
 def main():
