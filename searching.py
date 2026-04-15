@@ -1,9 +1,11 @@
 from pathlib import Path
 import json
 
+from generators import unordered_sequence
 
-def read_data(file_name, field):
-    """
+
+
+"""
     Reads a JSON file and returns data for a given field.
 
     Args:
@@ -18,13 +20,27 @@ def read_data(file_name, field):
             - None: If the field is not supported.
     """
     # get current working directory path
-    cwd_path = Path.cwd()
+   # cwd_path = Path.cwd()
     
-    file_path = cwd_path / file_name
+   # file_path = cwd_path / file_name
 
+import json
+def read_data(filename, field):
+    with open("sequential.json", "r") as f:
+        data = json.load(f)
+        if field in data.keys():
+            return data[field]
+        else:
+            return None
+
+
+
+
+#def binary_search():
 
 def main():
-    pass
+    sequential_data = read_data("sequential.json", "unordered_sequence()")
+    print(sequential_data)
 
 
 if __name__ == "__main__":
