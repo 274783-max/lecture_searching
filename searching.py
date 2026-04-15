@@ -58,10 +58,21 @@ def linear_search(searched_data, target):
 
 
 
-#def binary_search(searched_data, target):
-    #sorted(searched_data)
-    #s = searched_data.sort()
-    #for i in searched_data:
+def binary_search(searched_data, target):
+    sorted(searched_data)
+    s = searched_data.sort()
+    left = 0
+    right = len(s) - 1
+    while left <= right:
+        middle = (left + right) // 2
+        if middle == target:
+            return target
+        elif middle > target:
+            left = middle + 1
+        elif middle < target:
+            right = middle - 1
+    return None
+
 
 
 def main():
